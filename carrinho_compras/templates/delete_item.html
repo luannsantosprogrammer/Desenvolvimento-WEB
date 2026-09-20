@@ -1,0 +1,12 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/delete.css' %}">
+
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <button>Deseja deletar ?</button>
+        <a href="{% url 'buy' %}">Cancelar</a>
+    </form>
+</body>

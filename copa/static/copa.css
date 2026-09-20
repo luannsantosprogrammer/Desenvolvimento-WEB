@@ -1,0 +1,188 @@
+body{
+    background: #fdd3bc;
+    display: flex;
+    justify-content: center;
+    transform: translateY(50%);
+    
+}
+h1{
+    font-size: 3.5em;
+    position: relative;
+    color: #FF5022;
+    z-index: 1;
+
+}
+.down-text{
+    width: 1px;
+    height: 2px;
+    opacity: 1;
+    z-index: 0;
+    position: absolute;
+    background-color: #FF5022;
+    transform: translate(8px,-45px);
+}
+/* input */ 
+ 
+.input {
+  margin: 30px;
+  background: none;
+  border: none;
+  outline: none;
+  max-width: 350px;
+  padding: 10px 20px;
+  font-size: 2rem;
+  border-radius: 9999px;
+  box-shadow: inset 2px 5px 10px #FF5022;
+  color: #FF5022;
+  height: 4rem;
+  text-align:center;
+}
+input::placeholder{
+    color: #FF5022;
+    
+}
+/* ----------------------------------- */
+/* button */
+
+.keycap {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #FF5022, #FF5022);
+  box-shadow:
+
+  inset -8px 0 8px rgba(255, 80, 34, 0.15),
+  inset 0 -8px 8px rgba(255, 80, 34, 0.25),
+  0 0 0 2px rgba(255, 80, 34, 0.75),
+  10px 20px 25px rgba(255, 80, 34, 0.4);
+
+  overflow: hidden;
+  transition:
+    transform 0.1s ease-in-out,
+    box-shadow 0.1s ease-in;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  .letter {
+    position: absolute;
+    left: 5px;
+    top: 25px;
+    color: #e9e9e9;
+    font-size: 20px;
+    transition: transform 0.1s ease-in-out;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    bottom: 14px;
+    right: 12px;
+
+    border-radius: 10px;
+    box-shadow:
+    0 0 0 2px rgba(255, 80, 34, 0.75),
+    10px 20px 25px rgba(255, 80, 34, 0.4);
+    border-left: 1px solid #FF5022;
+    border-bottom: 1px solid #FF5022;
+    border-top: 1px solid #FF5022;
+    transition: all 0.1s ease-in-out;
+  }
+
+  &:active {
+    transform: translateY(2px);
+    box-shadow:
+    inset -8px 0 8px rgba(255, 80, 34, 0.15),
+    inset 0 -8px 8px rgba(255, 80, 34, 0.25),
+    0 0 0 2px rgba(255, 80, 34, 0.75),
+    10px 20px 25px rgba(255, 80, 34, 0.4);
+
+    &::before {
+      top: 5px;
+      left: 5px;
+      bottom: 11px;
+      right: 11px;
+      box-shadow:
+        -5px -5px 5px rgba(255, 255, 255, 0.15),
+        5px 3px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .letter {
+      transform: translateY(1px);
+    }
+  }
+}
+/* ---------------------------- */
+/* tooltip */
+.conteiner-alert{
+    border: 5px solid #FF5022;
+    width: 300px;
+    border-radius: 9px;
+    display: flex;
+   justify-content: space-around;
+}
+h2{
+    text-align: center;
+}
+h2:last-child{
+display: none;
+}
+
+.conteiner-acess{
+    width: 30%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 0 20px 10px white ;
+    border-radius: 8px;
+    margin:0px;
+
+}
+img{
+    width: 150px;
+    height: 150px;
+    animation: animationFigure duration timing-function delay iteration-count direction fill-mode;
+}
+@keyframes animationFigure {
+    
+}
+
+
+.tooltiptext {
+  visibility: hidden;
+  width: 200px;
+  background-color: #28282817;
+  color: #282828;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  border-width: 8px;
+  border-style: solid;
+  border-color: #28282817 transparent transparent transparent;
+  transform: translateX(-50%);
+}
+.alert{
+    background-color: #FF5022;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    height: 40%;
+}

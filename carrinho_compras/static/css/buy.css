@@ -1,0 +1,77 @@
+body{
+    background-color: #01c4e7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#content{
+    width: 35rem;
+    height: 25rem;
+    box-shadow: 2px 2px 3px 3px black;
+    border-radius: 80px;
+    transform: translateY(20%);
+    overflow-y: scroll;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+#content::-webkit-scrollbar{
+    visibility: hidden;
+}
+
+#title-itens{
+ display: flex;
+ flex-direction: row;
+ justify-content: center;  
+ align-items: baseline; 
+ transform: translateY(4.5rem);
+}
+.itens-compras{
+    display: flex;
+    flex-direction: row;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(4rem);
+
+}
+label{
+    font-size: 1.5rem;
+    color: white;
+    margin: 0.5rem;
+}
+input{
+    height: 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+h3{
+    margin: 1rem;
+    color: white;
+}
+a,button{
+    text-decoration: none;
+    color: white;
+    box-shadow: 2px 2px 3px 3px white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    
+    
+   
+}
+
+#movie-page{
+    position: relative;
+    transform: translateX(-29rem);
+
+}
+.total-compra{
+    font-size: 4rem;
+    transform: translateY(70%);
+}

@@ -1,0 +1,37 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+
+<form method="POST" >
+    {% csrf_token %}
+    <label>
+        Usuário: 
+    <input type="text" name="username" autocomplete="off">
+    </label>
+
+    <label>
+        Senha: 
+    <input type="password" name="password" id="password" autocomplete="off">
+    <button type="button" onclick="showPassword('password')" style="background-color: #01c4e7;border: none;padding: 0%;">👁</button>
+    
+    </label>
+
+    <button type="submit" style="border: none;background-color: #01c4e7;">Acessar</button>
+
+    <a style="margin: 1rem;" href="{% url 'create_user' %}">Criar login</a>
+
+</form>
+
+<script>
+    function showPassword(id){
+    const input = document.getElementById(id)
+
+    if(input.type === "password"){
+        input.type = "text"
+    }else{
+        input.type = "password"
+    }
+}
+
+</script>

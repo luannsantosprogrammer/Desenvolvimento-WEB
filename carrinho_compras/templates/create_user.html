@@ -1,0 +1,53 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/create_user.css' %}">
+
+
+<a href="{% url 'login' %}" id="movie-page">Retornar</a>
+<form method="POST">
+    {% csrf_token %}
+    <label for="">
+    {{ form.username.label }}
+    {{ form.username }}
+    </label>
+
+    <label for="">
+    {{ form.password1.label }}
+    {{ form.password1 }}
+    <button type="button" onclick="showPassword('id_password1')" 
+    style="border: none;background-color: #01c4e7;">
+        👁
+    </button>
+    </label>
+
+
+
+
+    <label for="">
+    {{ form.password2.label }}
+    {{ form.password2 }}
+    <button type="button" onclick="showPassword('id_password2')"
+    style="border: none;background-color: #01c4e7;">
+        👁
+    </button>
+    </label>
+
+
+
+    <button type="submit" style="border: none;background-color: #01c4e7;">Criar conta</button>
+</form>
+
+
+<script>
+function showPassword(id){
+    const input = document.getElementById(id)
+
+    if(input.type === "password"){
+        input.type = "text"
+    }else{
+        input.type = "password"
+    }
+}
+showPassword()
+</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'css/buy.css' %}">
+
+<a href="{% url 'logout_user' %}" id="movie-page"> Sair </a>
+
+<form method="POST">
+    {% csrf_token %}
+    <label for="">
+    {{form.name_product.label}}: {{form.name_product}}
+
+    </label>
+    <label for="">
+    {{form.price.label}}: {{form.price}}
+
+    </label>
+    <label for="">
+    {{form.amount.label}}: {{form.amount}}
+
+    </label>
+ 
+    <button type="submit" style="background-color: #01c4e7;border: none;padding: 0%;">Adicionar</button>
+</form>
+
+<div id="title-itens">
+    <h3>Produto |</h3> 
+    <h3>Quantidade |</h3> 
+    <h3>Preço |</h3>  
+    <h3>Total do Produto</h3>
+</div>
+
+
+
+<div id="content">
+
+{% for item in itens %}
+
+<div class="itens-compras">
+
+<h3>{{item.name_product}}</h3> 
+<h3>{{item.amount}}</h3> 
+<h3>R$ {{item.price}}</h3> 
+<h3 class="total">R$ {{item.total_product}}</h3> 
+
+<h3>
+<a href="{% url 'delete_item' item.id %}" >Deletar</a>
+</h3>
+
+</div>
+
+{% empty %}
+
+<h3>Adicione itens</h3>
+
+{% endfor %}
+
+</div>
+
+<h3 class="total-compra"></h3>
+
+
+<script>
+    let totais = Array.from(document.querySelectorAll(".total"));
+    let totalCompra = document.querySelector(".total-compra")
+    let total = totais.reduce((acc, value) => {
+        let formatFloat = value.innerText.split(" ")[1].replace(",",".")
+       return acc + parseFloat(formatFloat)
+    }, 0);
+    
+    totalCompra.innerText = `R$ ${total}`;
+
+</script>
